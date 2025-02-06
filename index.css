@@ -12,6 +12,7 @@ body{
 }
 .quiz-container{
     width: 30%;
+    max-width: 500px;
     margin: auto;
     margin-top: 50px;
     padding: 20px;
@@ -101,4 +102,17 @@ h2{
 }
 #final-score{
     color: #13121293;
+}
+@media (max-width: 600px){
+    .quiz-container{
+        width: 95%;
+        padding: 15px;
+    }
+    #question{
+        font-size: 1rem;
+    }
+    button{
+        font-size: 0.9rem;
+        padding: 12px;
+    }
 }

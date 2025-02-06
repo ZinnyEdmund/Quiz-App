@@ -54,7 +54,7 @@ const questions= [
 ];
 
 //Variables to track quiz progress
-let currentQuestionIndex = 0;
+let QuestionIndex = 0;
 let score = 0;
 
 //Selecting elements from the HTML
@@ -68,7 +68,7 @@ const finalScoreEl = document.getElementById("final-score");
 
 //Loads the current question and its options
 function loadQuestion(){
-    let currentQuestion = questions[currentQuestionIndex];
+    let currentQuestion = questions[QuestionIndex];
     questionEl.textContent = currentQuestion.question;
     optionsEl.innerHTML = "";  
 
@@ -81,12 +81,12 @@ function loadQuestion(){
     });
 
     //update progress indicator
-    progressEl.textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
+    progressEl.textContent = `Question ${QuestionIndex + 1} of ${questions.length}`;
 }
 
 //Checks the selected answer and updates the score
 function checkAnswer(selected){
-    if (selected === questions[currentQuestionIndex].answer){
+    if (selected === questions[QuestionIndex].answer){
         score++;
     }
     nextQuestion();
@@ -94,8 +94,8 @@ function checkAnswer(selected){
 
 //Moves to the next question or ends the code
 function nextQuestion(){
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length){
+    QuestionIndex++;
+    if (QuestionIndex < questions.length){
         loadQuestion();
     }
     else{ 
@@ -114,7 +114,7 @@ function showResults(){
 //Resets the quiz for a new attempt
 function restartQuiz(){
     score = 0;
-    currentQuestionIndex = 0; //Resets index
+    QuestionIndex = 0; //Resets index
     scoreBox.classList.add("hide"); //Hide score screen
     quizBox.classList.remove("hide"); //Show quiz again
     loadQuestion(); //Reload the first question
