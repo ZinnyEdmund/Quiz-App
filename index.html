@@ -3,24 +3,28 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Age Calculator</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Quiz App</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <link rel='stylesheet' type='text/css' media='screen' href='index.css'>
-
+  
 </head>
 <body>
-
-    <div id="box-container">
-        <h1 class="myH1">Age Calculator</h1>
-
-
-        <label for="text">Enter  your date of birth:</label><br>
-        <input type="number" name="dob" id="display"><br>
-
-        <button onclick="calculateAge()" id="ageBtn">Calculate</button>
-        <p id="results"></p>
+  
+    <div class="quiz-container">
+          <h2>Quiz App</h2>
+        <div id="quiz-box">
+            <h2 id="question">Loading...</h2>
+            <div id="options"></div>
+            <button id="next-btn">Next</button>
+        </div>
+        <div id="score-box" class="hide">
+            <h2>Quiz Completed!</h2>
+            <p id="final-score"></p>
+            <button onclick="restartQuiz()">Restart</button>
+        </div>
+        <p id="progress"></p>
     </div>
-    
+
     <script src='index.js'></script>
 </body>
 </html>
